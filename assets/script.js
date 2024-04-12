@@ -1,3 +1,15 @@
+const arrowLeft = document.querySelector('.arrow_left');
+const arrowRight = document.querySelector('.arrow_right');
+
+
+arrowLeft.addEventListener('click', () => {
+	console.log('click left');
+});
+
+arrowRight.addEventListener('click', () => {
+	console.log('click right');
+});
+
 const slides = [
 	{
 		"image":"slide1.jpg",
@@ -16,3 +28,5 @@ const slides = [
 		"tagLine":"Autocollants <span>avec découpe laser sur mesure</span>"
 	}
 ]
+
+
