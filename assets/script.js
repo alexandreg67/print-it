@@ -2,6 +2,7 @@ const arrowLeft = document.querySelector('.arrow_left');
 const arrowRight = document.querySelector('.arrow_right');
 const dots = document.querySelector('.dots');
 const bannerImg = document.querySelector('.banner-img');
+const banner = document.querySelector('#banner');
 let i = 0;
 
 
@@ -29,21 +30,34 @@ dots.innerHTML = '<span class="dot"></span>'.repeat(slides.length);
 
 arrowLeft.addEventListener('click', () => {
 	console.log('click left');
+	let tagLine = document.querySelector('.tag-line');
 	i--;
 	if(i < 0){
 		i = slides.length - 1;
 	}
 	bannerImg.src = `./assets/images/slideshow/${slides[i].image}`;
+	let texte = document.createElement('p');
+	texte.innerHTML = `${slides[i].tagLine}`;
+	texte.classList.add('tag-line');
+	banner.removeChild(tagLine);
+	banner.appendChild(texte);
+	console.log(texte);
+	
 });
 
 arrowRight.addEventListener('click', () => {
-	console.log('click right');
+	// console.log('click right');
+	let tagLine = document.querySelector('.tag-line');
 	i++;
 	if(i >= slides.length){
 		i = 0;
 	}
-	src="./assets/images/slideshow/slide1.jpg";
 	bannerImg.src = `./assets/images/slideshow/${slides[i].image}`;
-
+	let texte = document.createElement('p');
+	texte.innerHTML = `${slides[i].tagLine}`;
+	texte.classList.add('tag-line');
+	// console.log(texte);
+	banner.removeChild(tagLine);
+	banner.appendChild(texte);
 });
 
